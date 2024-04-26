@@ -5,7 +5,8 @@ from mpl_toolkits.mplot3d import Axes3D
 def sample_spherical(npoints, ndim=3, radius=1):
     vec = np.random.randn(ndim, npoints)
     vec /= np.linalg.norm(vec, axis=0)
-    return radius * vec
+    r = np.random.rand(npoints) ** (1/ndim)
+    return radius * r * vec
 
 def plot_3d_spherical(points):
     fig = plt.figure()
@@ -24,7 +25,7 @@ def plot_3d_spherical(points):
     plt.show()
 
 # Example usage:
-npoints = 100
+npoints = 1000
 ndim = 3
 radius = 1.0  # Change the radius as per your requirement
 points = sample_spherical(npoints, ndim, radius)
