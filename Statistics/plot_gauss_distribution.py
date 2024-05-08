@@ -26,11 +26,11 @@ def multivariate_gaussian_pdf(x, mu, cov_matrix):
 n = 2  # Number of dimensions
 
 # Mean vector
-mu = np.zeros(n)
+mu = np.array([1.0, -2.0]) #zeros(n)
 
 # Covariance matrix
-cov_matrix = np.array([[1, 0.5],
-                       [0.5, 2]])
+cov_matrix = np.array([[1, -0.8],
+                       [-0.8, 2]])
 
 # Define the range for x and y
 x = np.linspace(-5, 5, 100)
