@@ -97,6 +97,7 @@ def deep_q_learning(net, target_net, replay_buffer, optimizer, gamma=0.99, batch
             Qmax = torch.max(target_net(next_state_batch), 1)[0].unsqueeze(1)
             targetQ = reward_batch + gamma * Qmax
             loss = criterion(Q, targetQ)
+            print(" reward_val=", str(reward_val))
 
             optimizer.zero_grad()
             loss.backward()
